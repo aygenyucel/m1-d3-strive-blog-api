@@ -87,7 +87,7 @@ blogPostsRouter.put("/:blogPostId", (req, res) => {
 blogPostsRouter.delete("/:blogPostId", (req, res) => {
   const blogPostsArray = getBlogPosts();
   const remainingBlogPosts = blogPostsArray.filter(
-    (blogPost) => blogPost.id !== req.params.blogPostId
+    (blogPost) => blogPost._id !== req.params.blogPostId
   );
   writeBlogPosts(remainingBlogPosts);
   res.send();
